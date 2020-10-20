@@ -1,1 +1,1 @@
-buildDockerAndPublishImage('packer')  
+buildDockerAndPublishImage('packer', [mainBranch: 'main'])  
