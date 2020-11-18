@@ -1,4 +1,4 @@
-FROM hashicorp/packer:1.6.4
+FROM hashicorp/packer:1.6.5
 
 ENV WINDOWS_UPDATE_VERSION 0.10.1
 
