@@ -1,1 +1,5 @@
-buildDockerAndPublishImage('packer', [mainBranch: 'main'])  
+buildDockerAndPublishImage('packer', [
+    mainBranch: 'main',
+    automaticSemanticVersioning: true,
+    gitCredentials: 'github-app-infra'
+])  
