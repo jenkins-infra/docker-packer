@@ -1,0 +1,29 @@
+title: Bump Packer Windows Update Provisioner plugin version
+sources:
+  latestRelease:
+    kind: githubRelease
+    name: Get latest rgl/packer-plugin-windows-update version
+    spec:
+      owner: "rgl"
+      repository: "packer-plugin-windows-update"
+      token: "{{ requiredEnv .github.token }}"
+      username: "{{ .github.username }}"
+# No condition here as we're downloading the plugin from github directly (no docker image involved)
+targets:
+  updateReleaseInDockerfile:
+    name: "Update the version of the Packer Windows Update Provisioner plugin in the Dockerfile"
+    kind: dockerfile
+    spec:
+      file: Dockerfile
+      instruction:
+        keyword: "ENV"
+        matcher: "WINDOWS_UPDATE_VERSION"
+    scm:
+      github:
+        user: "{{ .github.user }}"
+        email: "{{ .github.email }}"
+        owner: "{{ .github.owner }}"
+        repository: "{{ .github.repository }}"
+        token: "{{ requiredEnv .github.token }}"
+        username: "{{ .github.username }}"
+        branch: "{{ .github.branch }}"
