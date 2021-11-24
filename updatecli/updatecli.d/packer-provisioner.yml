@@ -16,7 +16,7 @@ targets:
     spec:
       file: Dockerfile
       instruction:
-        keyword: "ENV"
+        keyword: "ARG"
         matcher: "WINDOWS_UPDATE_VERSION"
     scm:
       github:
