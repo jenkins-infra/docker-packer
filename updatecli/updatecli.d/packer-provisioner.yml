@@ -8,6 +8,9 @@ sources:
       repository: "packer-plugin-windows-update"
       token: "{{ requiredEnv .github.token }}"
       username: "{{ .github.username }}"
+      versionFilter:
+        # retrieve the latest version as semver (without 'v' prefix)
+        kind: semver
 # No condition here as we're downloading the plugin from github directly (no docker image involved)
 targets:
   updateReleaseInDockerfile:
