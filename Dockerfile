@@ -9,4 +9,5 @@ RUN sed -i '/.*linux_amd64.zip/!d' packer-plugin-windows-update_${WINDOWS_UPDATE
     sha256sum -cs packer-plugin-windows-update_${WINDOWS_UPDATE_VERSION}_SHA256SUMS && \
     unzip packer-plugin-windows-update_${WINDOWS_UPDATE_VERSION}_x5.0_linux_amd64.zip -d /bin && \
     rm -f packer-plugin-windows-update_${WINDOWS_UPDATE_VERSION}_x5.0_linux_amd64.zip && \
+    mv /bin/packer-plugin-windows-update_v0.13.0_x5.0_linux_amd64 /bin/packer-plugin-windows-update && \
     chmod a+x /bin/packer-plugin-windows-update
