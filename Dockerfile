@@ -1,6 +1,6 @@
 FROM hashicorp/packer:1.6.5
 
-ARG WINDOWS_UPDATE_VERSION=0.14.0
+ARG WINDOWS_UPDATE_VERSION=v0.14.0
 
 ADD https://github.com/rgl/packer-provisioner-windows-update/releases/download/v${WINDOWS_UPDATE_VERSION}/packer-provisioner-windows-update_${WINDOWS_UPDATE_VERSION}_checksums.txt ./
 ADD https://github.com/rgl/packer-provisioner-windows-update/releases/download/v${WINDOWS_UPDATE_VERSION}/packer-provisioner-windows-update_${WINDOWS_UPDATE_VERSION}_linux_amd64.tar.gz ./
